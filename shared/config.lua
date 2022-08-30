@@ -57,6 +57,12 @@ Config.ItemShop = {
     ['gameymeat'] = {
         price = 0.5
     },
+    ['fish'] = {
+        price = 0.5
+    },
+    ['feather'] = {
+        price = 0.5
+    },
 }
 
 
