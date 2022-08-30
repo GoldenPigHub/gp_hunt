@@ -73,6 +73,20 @@ RegisterNetEvent('gp_hunt:OpenHuntMenu', function ()
             params = {
                 event = 'gp_hunt:client:DepositBigSkin',
             }
+        },
+        {
+            header = "Fish",
+            txt = "sell",
+            params = {
+                event = 'gp_hunt:client:DepositFish',
+            }
+        },
+        {
+            header = "Feather",
+            txt = "sell",
+            params = {
+                event = 'gp_hunt:client:DepositFeather',
+            }
         }
     }  
     exports['qbr-menu']:openMenu(huntMenu)
@@ -393,5 +407,43 @@ RegisterNetEvent('gp_hunt:client:DepositBigSkin', function(amount)
     if depositBigSkin then
         if not depositBigSkin.amount then return end
         TriggerServerEvent('gp_hunt:server:sellBigSkin', tonumber(depositBigSkin.amount))
+    end
+end)
+
+RegisterNetEvent('gp_hunt:client:DepositFish', function(amount)
+    local depositFish = exports['qbr-input']:ShowInput({
+        header = "Amount to sell",
+        submitText = "Confirm",
+        inputs = {
+            {
+                type = 'number',
+                isRequired = true,
+                name = 'amount',
+                text = 'Amount'
+            }
+        }
+    })
+    if depositFish then
+        if not depositFish.amount then return end
+        TriggerServerEvent('gp_hunt:server:sellFish', tonumber(depositFish.amount))
+    end
+end)
+
+RegisterNetEvent('gp_hunt:client:DepositFeather', function(amount)
+    local depositFeather = exports['qbr-input']:ShowInput({
+        header = "Amount to sell",
+        submitText = "Confirm",
+        inputs = {
+            {
+                type = 'number',
+                isRequired = true,
+                name = 'amount',
+                text = 'Amount'
+            }
+        }
+    })
+    if depositFeather then
+        if not depositFeather.amount then return end
+        TriggerServerEvent('gp_hunt:server:sellFeather', tonumber(depositFeather.amount))
     end
 end)
