@@ -148,3 +148,33 @@ RegisterNetEvent('gp_hunt:server:sellBigSkin', function(amount)
         end
     end
 end)
+
+RegisterNetEvent('gp_hunt:server:sellFish', function(amount)
+    local src = source
+    local Player = exports['qbr-core']:GetPlayer(source)
+
+    local fishQuantity = Player.Functions.GetItemByName('fish').amount
+    local price = amount * Config.ItemShop.fish.price
+
+    if fishQuantity ~= nil then
+        if Player.Functions.RemoveItem('fish', amount) then
+            TriggerClientEvent('inventory:client:ItemBox', src, sharedItems['fish'], 'remove')
+            Player.Functions.AddMoney('cash', tonumber(price), 'butcher-payout')
+        end
+    end
+end)
+
+RegisterNetEvent('gp_hunt:server:sellFeather', function(amount)
+    local src = source
+    local Player = exports['qbr-core']:GetPlayer(source)
+
+    local featherQuantity = Player.Functions.GetItemByName('feather').amount
+    local price = amount * Config.ItemShop.feather.price
+
+    if featherQuantity ~= nil then
+        if Player.Functions.RemoveItem('feather', amount) then
+            TriggerClientEvent('inventory:client:ItemBox', src, sharedItems['feather'], 'remove')
+            Player.Functions.AddMoney('cash', tonumber(price), 'butcher-payout')
+        end
+    end
+end)
