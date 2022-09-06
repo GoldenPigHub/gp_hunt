@@ -1,6 +1,6 @@
 # GP_HUNT
 ### Preview -->> https://streamable.com/rad23j
-#### Skin and Sell stuff gathered from animals (pelts, leather, meat...), prices and butcher location are configurable
+#### QBR | Skin and Sell stuff gathered from animals (pelts, leather, meat...), prices and butcher location are configurable
 
 #### Requirements
 [qbr-core](https://github.com/qbcore-redm-framework/qbr-core)
