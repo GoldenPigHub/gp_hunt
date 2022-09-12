@@ -1,5 +1,5 @@
 # GP_HUNT
-### Preview -->> https://streamable.com/rad23j
+### Preview -->> https://youtu.be/q_aYxOrnUI8
 #### QBR | Skin and Sell stuff gathered from animals (pelts, leather, meat...), prices and butcher location are configurable
 
 #### Requirements
